@@ -1,8 +1,9 @@
+package statisticstools;
 import java.lang.Math;
 
-class StatisticsTools {
+public class Methods implements StatisticsTools {
 
-    public static void main (String[] args){
+    /*public static void main (String[] args){
 
 	double[][] x = new double[100][3];
 
@@ -35,9 +36,9 @@ class StatisticsTools {
 	double[] yCI = confidenceInterval1DArray(y, 1.96);
 
 	System.out.println("[ " + yCI[0] + " , " + yCI[1] + " ]");
-    }
+	}*/
 
-    public static double[] generateRandom1DArray(int numberOfRows, double range1, double range2) {
+    public double[] generateRandom1DArray(int numberOfRows, double range1, double range2) {
 	double[] array = new double[numberOfRows];
 
 	for(int i = 0; i < numberOfRows; i++) {
@@ -47,7 +48,7 @@ class StatisticsTools {
 	return array;
     }
 
-    public static double[][] generateRandom2DArray(int numberOfRows, int numberOfColumns, double range1, double range2) {
+    public double[][] generateRandom2DArray(int numberOfRows, int numberOfColumns, double range1, double range2) {
 	double[][] array = new double[numberOfRows][numberOfColumns];
 
 	for (int i = 0; i < numberOfRows; i++) {
@@ -59,7 +60,7 @@ class StatisticsTools {
 	return array;
     }
 
-    public static double average1DArray(double[] x) {
+    public double average1DArray(double[] x) {
 	double sum = 0;
 	int arrayLength = x.length;
 
@@ -70,7 +71,7 @@ class StatisticsTools {
 	return sum / arrayLength;
     }
     
-    public static double average2DArray(double[][] x, int columnOrder) {
+    public double average2DArray(double[][] x, int columnOrder) {
 	double sum = 0;
 	int arrayLength = x.length;
 
@@ -81,7 +82,7 @@ class StatisticsTools {
 	return sum / arrayLength;
     }
 
-    public static double standardDiv1DArray(double[] x) {
+    public double standardDiv1DArray(double[] x) {
 	double sum = 0;
 	double avg = average1DArray(x);
 	int size = x.length;
@@ -93,7 +94,7 @@ class StatisticsTools {
 	return Math.sqrt(sum / size);
     }
 
-    public static double standardDiv2DArray(double[][] x, int columnOrder) {
+    public double standardDiv2DArray(double[][] x, int columnOrder) {
 	double sum = 0;
 	double avg = average2DArray(x, columnOrder);
 	int size = x.length;
@@ -105,7 +106,7 @@ class StatisticsTools {
 	return Math.sqrt(sum / size);
     }
 
-    public static double[] confidenceInterval1DArray(double[] x, double zScore) {
+    public double[] confidenceInterval1DArray(double[] x, double zScore) {
 	double avg = average1DArray(x);
 	double std = standardDiv1DArray(x);
 	double meanOfError = zScore * std / Math.sqrt(x.length);
@@ -117,7 +118,7 @@ class StatisticsTools {
 	return result;
     }
 
-    public static double[] confidenceInterval2DArray(double[][] x, double zScore, int columnOrder) {
+    public double[] confidenceInterval2DArray(double[][] x, double zScore, int columnOrder) {
 	double avg = average2DArray(x, columnOrder);
 	double std = standardDiv2DArray(x, columnOrder);
 	double meanOfError = zScore * std / Math.sqrt(x.length);
@@ -129,14 +130,14 @@ class StatisticsTools {
 	return result;
     }
 
-    public static void print1DArray(double[] array) {
+    public void print1DArray(double[] array) {
 
 	for(int i = 0; i < array.length; i++) {
 	    System.out.printf(i + ": %.15f\n", array[i]);
 	}
     }
 
-    public static void print2DArray(double[][] array) {
+    public void print2DArray(double[][] array) {
 	int numberOfColumns = array[0].length;
 	int numberOfRows = array.length;
 
