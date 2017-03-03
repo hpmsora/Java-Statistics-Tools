@@ -4,12 +4,12 @@ Simple Statistics Tools Written by Java
 by Won Yong Ha
 
 
-'''java
+```java
 import statisticstools.Methods;
-'''
+```
 
 StatisticsTools.java
-'''java
+```java
 public double[] generateRandom1DArray(int numberOfRows, double range1, double range2);
 public double[][] generateRandom2DArray(int numberOfRows, int numberOfColumns, double range1, double range2);
 public double average1DArray(double[] x);
@@ -20,4 +20,4 @@ public double[] confidenceInterval1DArray(double[] x, double zScore);
 public double[] confidenceInterval2DArray(double[][] x, double zScore, int columnOrder);
 public void print1DArray(double[] array);
 public void print2DArray(double[][] array);
-'''
+```
