@@ -1,42 +1,9 @@
 package statisticstools;
+
 import java.lang.Math;
+import javax.swing.*;
 
 public class Methods implements StatisticsTools {
-
-    /*public static void main (String[] args){
-
-	double[][] x = new double[100][3];
-
-	x = generateRandom2DArray(100, 3, 0, 1);
-
-	print2DArray(x);
-
-	System.out.println("Avg 1 : " + average2DArray(x, 0) + "2 : " + average2DArray(x, 1) + "3: " + average2DArray(x,2));
-
-	System.out.println("Std 1 : " + standardDiv2DArray(x, 0) + "2 : " + standardDiv2DArray(x, 1) + "3: " + standardDiv2DArray(x,2));
-
-	double[] xCI1 = confidenceInterval2DArray(x, 1.96, 0);
-	double[] xCI2 = confidenceInterval2DArray(x, 1.96, 1);
-	double[] xCI3 = confidenceInterval2DArray(x, 1.96, 2);
-	
-	System.out.println("CI 1 : [ " + xCI1[0] + " , " + xCI1[1] + " ]");
-	System.out.println("CI 2 : [ " + xCI2[0] + " , " + xCI2[1] + " ]");
-	System.out.println("CI 3 : [ " + xCI3[0] + " , " + xCI3[1] + " ]");
-	
-	double[] y = new double[100];
-
-	y = generateRandom1DArray(100, 0, 1);
-
-	print1DArray(y);
-
-	System.out.println("Avg: " + average1DArray(y));
-	
-	System.out.println("Std: " + standardDiv1DArray(y));
-
-	double[] yCI = confidenceInterval1DArray(y, 1.96);
-
-	System.out.println("[ " + yCI[0] + " , " + yCI[1] + " ]");
-	}*/
 
     public double[] generateRandom1DArray(int numberOfRows, double range1, double range2) {
 	double[] array = new double[numberOfRows];
@@ -148,5 +115,14 @@ public class Methods implements StatisticsTools {
 	    }
 	    System.out.print(" ]\n");
 	}
+    }
+
+    public void drawHistogram() {
+	JFrame frame = new JFrame("Title");
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	GraphMethodsTools tools = new GraphMethodsTools();
+	frame.add(tools);
+	frame.setSize(400,250);
+	frame.setVisible(true);
     }
 }
