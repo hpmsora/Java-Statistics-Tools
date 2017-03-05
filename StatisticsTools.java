@@ -10,5 +10,5 @@ interface StatisticsTools {
     public double[] confidenceInterval2DArray(double[][] x, double zScore, int columnOrder);
     public void print1DArray(double[] array);
     public void print2DArray(double[][] array);
-    public void drawHistogram(String title, double[] values, double x_start, double x_end, double x_interval, double y_start, double y_end, double y_interval);
+    public void drawHistogram(String title, double[] values, double x_start, double x_end, double x_interval, int y_start, int y_end, int y_interval);
 }

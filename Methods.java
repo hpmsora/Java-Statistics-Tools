@@ -117,12 +117,12 @@ public class Methods implements StatisticsTools {
 	}
     }
 
-    public void drawHistogram(String title, double[] values, double x_start, double x_end, double x_interval, double y_start, double y_end, double y_interval) {
-	JFrame frame = new JFrame("Title");
+    public void drawHistogram(String title, double[] values, double x_start, double x_end, double x_interval, int y_start, int y_end, int y_interval) {
+	JFrame frame = new JFrame("Histogram");
 	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	DrawHistogram tools = new DrawHistogram(title, values, x_start, x_end, x_interval, y_start, y_end, y_interval);
 	frame.add(tools);
-	frame.setSize(400,250);
+	frame.setSize(1000,500);
 	frame.setVisible(true);
     }
 }

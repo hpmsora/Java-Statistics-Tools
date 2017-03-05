@@ -10,6 +10,6 @@ public class test {
 	x = a.generateRandom1DArray(100, 0, 10);
 	
 	a.print1DArray(x);
-	a.drawHistogram("Histogram 1", x, 0, 10, 1, 0, 10, 1);
+	a.drawHistogram("Histogram 1", x, 0, 10, 1, 0, 20, 1);
     }
 }

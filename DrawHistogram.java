@@ -7,9 +7,10 @@ public class DrawHistogram extends JPanel {
 
     private String _title = "";
     private double[] _values;
-    private double _x_start, _x_end, _x_interval, _y_start, _y_end, _y_interval;
+    private double _x_start, _x_end, _x_interval;
+    private int _y_start, _y_end, _y_interval;
 
-    public DrawHistogram(String title, double[] values, double x_start, double x_end, double x_interval, double y_start, double y_end, double y_interval) {
+    public DrawHistogram(String title, double[] values, double x_start, double x_end, double x_interval, int y_start, int y_end, int y_interval) {
 	_title = title;
 	_values = values;
 	_x_start = x_start;
@@ -22,19 +23,20 @@ public class DrawHistogram extends JPanel {
     
     public void paintComponent(Graphics g) {
 	int[] calcArray = calculateArray();
+	int calcArraySize = calcArray.length;
+	int graphInterval = (int) Math.ceil(800 / (double) calcArraySize);
 	
 	super.paintComponent(g);
 	this.setBackground(Color.WHITE);
 
-	g.setColor(Color.BLUE);
-	g.fillRect(25, 25, 100, 30);
-
+	for (int i = 0; i < calcArraySize; i++) {
+	    g.setColor(Color.BLUE);
+	    g.fillRect(100 + graphInterval * i, 400 - calcArray[i] * 400 / ((_y_end - _y_start) / _y_interval), graphInterval, calcArray[i] * 400 / ((_y_end - _y_start) / _y_interval));
+	}
+	    
 	g.setColor(new Color(190,81,215));
 	g.drawString(_title, 25, 120);
 	
-	for (int i = 0; i < calcArray.length; i++) {
-	    System.out.println("Order " + i + " : " + calcArray[i]); 
-	}
     }
 
     public int[] calculateArray() {
