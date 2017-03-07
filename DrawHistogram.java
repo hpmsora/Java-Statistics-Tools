@@ -34,8 +34,8 @@ public class DrawHistogram extends JPanel {
 	    g.fillRect(100 + graphInterval * i, 400 - calcArray[i] * 400 / ((_y_end - _y_start) / _y_interval), graphInterval, calcArray[i] * 400 / ((_y_end - _y_start) / _y_interval));
 	}
 	    
-	g.setColor(new Color(190,81,215));
-	g.drawString(_title, 25, 120);
+	g.setColor(Color.BLACK);
+	g.drawString(_title, 250, 50);
 	
     }
 
