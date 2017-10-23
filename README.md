@@ -28,5 +28,9 @@ public void drawHistogram(String title, double[] values, double x_start, double 
 public void combinationCal(double[] array);
 ```
 
-
-
+Usage of Makefile
+```Makefile
+make update   //Update the statisticstools package
+make test     //Test the test.javafile
+make clean    //Remove all class file on parents folder
+```
