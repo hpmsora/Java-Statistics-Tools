@@ -1,6 +1,7 @@
 package statisticstools;
 
 import java.lang.Math;
+import java.util.*;
 import javax.swing.*;
 
 public class Methods implements StatisticsTools {
@@ -116,20 +117,47 @@ public class Methods implements StatisticsTools {
     }
   }
 
-  public double combinationCal(double[] array) {
-    for (int i = 0; i < array.length; i++){
-      System.out.print(array[i] + " ");
+  public double combinationCal(ArrayList<Double> array) {
+    for (int i = 0; i < array.size(); i++){
+      System.out.print(array.get(i) + " ");
     }
     System.out.print("\n\n");
 
     double result = 0;
+    List<List<Double>> resultArray = new ArrayList<List<Double>>();
 
-    for (int i = 1; i <= array.length; i++) {
-      int x = i;
-      
+    resultArray = combinationCal_helper(array);
+
+    for(List<Double> i: resultArray) {
+      for(double j: i) {
+        System.out.print(j + " ");
+      }
+      System.out.print("\n");
     }
 
     return result;
+  }
+
+  public  List<List<Double>> combinationCal_helper(ArrayList<Double> array) {
+    ArrayList<Double> temp = new ArrayList<Double>(array);
+    List<List<Double>> result = new ArrayList<List<Double>>();
+
+    if (array.size() <= 1) {
+      result.add(array);
+      return result;
+    } else {
+      double x = temp.get(0);
+      temp.remove(0);
+      List<List<Double>> nullResult = combinationCal_helper(temp);
+      List<List<Double>> addResult = combinationCal_helper(temp);
+
+      for(List<Double> i: addResult) {
+        i.add(x);
+      }
+
+      addResult.addAll(nullResult);
+      return addResult;
+    }
   }
 
   public void drawHistogram(String title, double[] values, double x_start, double x_end, double x_interval, int y_start, int y_end, int y_interval) {

@@ -1,5 +1,6 @@
 import statisticstools.Methods;
 import java.lang.Math;
+import java.util.*;
 
 public class test {
   public static void main(String[] args) {
@@ -14,8 +15,11 @@ public class test {
 
     Methods method = new Methods();
 
-    double[] x = {1, 2, 3, 4, 5, 6};
-
+    ArrayList<Double> x = new ArrayList<Double>(); //Double.parseDouble(int)
+    x.add(4.0);
+    x.add(3.0);
+    x.add(2.0);
+    x.add(1.0);
 
     System.out.println(method.combinationCal(x));
   }

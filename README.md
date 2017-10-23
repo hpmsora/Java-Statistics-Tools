@@ -1,5 +1,5 @@
 # Java-Statistics-Tools
-Simple Statistics Tools Written by Java
+Simple Statistics Tools Written in Java
 
 by Won Yong Ha
 
