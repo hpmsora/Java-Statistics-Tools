@@ -155,7 +155,6 @@ public class Methods implements StatisticsTools {
         i.add(x);
       }
 
-      addResult.addAll(nullResult);
       return addResult;
     }
   }
